@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 body {
@@ -9,10 +9,59 @@ body {
 
 h1,h2 {
 	text-align: center;
+	margin-top: 0px;
+}
+
+h1 {
+	font-size: 175%;
+}
+
+h2 {
+	width: 200px;
+	position: absolute;
+	top: -1px;	/* to collapse section and header borders */
+	right: -1px;
+	border: 1px solid black;
+	font-size: 125%;
+}
+
+#beef-header {
+	background-color: #d22;
+}
+#chicken-header {
+	background-color: #2d2;
+}
+#sushi-header {
+	background-color: #2dd;
 }
 
 p {
-  width: 90%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 40px 20px 20px 20px;	/* 40px top to respect absolute positioned header */
 }
+
+/* 2-div scheme - outer (.section) for grid-like positioning, inner(.border) for 
+drawing nice border. In my first solution I used one div, but it included a few hard-coded
+numbers for width and margins, and I thrown it away. */
+.section {
+	float: left;
+	width: 100%	/* default falue - affects all sections in small screens ant 3rd one in middle */
+}
+.border {	
+	background-color: #d0d0d0;
+	margin: 0px 10px 0px 10px;
+	border: 1px solid black;
+	position: relative;	/* we need it to implement h2 (direct child) absolute position */
+}
+
+@media (min-width: 992px) {
+	.col-lg-4 {
+		width: 33.33%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.col-md-6 {
+		width: 50%;
+	}
+}
+
