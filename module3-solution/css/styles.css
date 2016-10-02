@@ -31,5 +31,12 @@ body {
   background-color: #ccc;
   margin-top: 0;
   margin-bottom: 0;
-  text-align: center;
+}
+
+/** CONTENT **/
+#main-content {
+  background-color: #eee;
+}
+#main-content p {
+  height: 500px;
 }
